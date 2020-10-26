@@ -206,7 +206,7 @@ class World2:
         year_max : int, optional
             end year of the simulation. The default is 2100.
         dt : float, optional
-            time step of the numerica integration [year]. The default is 0.2.
+            time step of the numerical integration [year]. The default is 0.2.
 
         """
         self.year_min = year_min
