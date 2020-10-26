@@ -5,12 +5,14 @@ from setuptools import setup
 
 import pyworld2
 
+
+description = "A Python implementation of the model World2."
 setup(
     name='pyworld2',
     version=pyworld2.__version__,
     packages=["pyworld2"],
-    description="A Python implementation of the model World2",
-    long_description=open('README.md').read(),
+    description=description,
+    long_description=description,
 
     author="Charles Vanwynsberghe",
     url='http://github.com/cvanwynsberghe/pyworld2',
@@ -24,8 +26,11 @@ setup(
         "Programming Language :: Python",
         "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Topic :: Science",
+        "Topic :: Scientific/Engineering",
         "Topic :: Education",
+        "Intended Audience :: Science/Research",
+        "Intended Audience :: Education",
+        "License :: OSI Approved :: MIT License",
     ],
 
     license="MIT",
