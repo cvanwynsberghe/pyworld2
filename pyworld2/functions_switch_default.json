@@ -1,0 +1,44 @@
+[
+ {
+  "BRN": 0.04,
+  "BRN1": 0.04,
+  "trigger.name": "SWT1",
+  "trigger.value": 1970
+ },
+ {
+  "NRUN": 1,
+  "NRUN1": 1,
+  "trigger.name": "SWT2",
+  "trigger.value": 1970
+ },
+ {
+  "DRN": 0.028,
+  "DRN1": 0.028,
+  "trigger.name": "SWT3",
+  "trigger.value": 1970
+ },
+ {
+  "FC": 1,
+  "FC1": 1,
+  "trigger.name": "SWT7",
+  "trigger.value": 1970
+ },
+ {
+  "CIGN": 0.05,
+  "CIGN1": 0.05,
+  "trigger.name": "SWT4",
+  "trigger.value": 1970
+ },
+ {
+  "CIDN": 0.025,
+  "CIDN1": 0.025,
+  "trigger.name": "SWT5",
+  "trigger.value": 1970
+ },
+ {
+  "POLN": 1,
+  "POLN1": 1,
+  "trigger.name": "SWT6",
+  "trigger.value": 1970
+ }
+]
