@@ -1,6 +1,7 @@
-# pyworld2
 
-Pyworld2 is a Python implementation of the World2 model, designed by Jay W. Forrester to predict trajectories of growth-focused Humankind in a world bounded by its physical limits. The model structure is thouroughly described in the book *World Dynamics*. Although World3 later became the reference, World2 is much less complex than its successor: it helps to get a good understanding of how the world could be modeled by a System Dynamics approach. World2 is a nonlinear 5-th order differential equation model with the following state variables:
+![Logo](./img/logo.png)
+
+PyWorld2 is a Python implementation of the World2 model, designed by Jay W. Forrester to predict trajectories of growth-focused Humankind in a world bounded by its physical limits. The model structure is thouroughly described in the book *World Dynamics*. Although World3 later became the reference, World2 is much less complex than its successor: it helps to get a good understanding of how the world could be modeled by a System Dynamics approach. World2 is a nonlinear 5-th order differential equation model with the following state variables:
 - human population `P`,
 - nonreplaceable natural resources `NR`,
 - pollution `POL`,
@@ -21,7 +22,7 @@ It will automatically install the requirements ``numpy``, ``scipy`` and ``matplo
 python setup.py install
 ```
 
-Hello world2
+Hello World2
 ------------
 
 Run the provided example:
@@ -63,7 +64,7 @@ pyworld2.utils.plot_world_state(w2)
 
 References & acknowledgment
 ---------------------------
-Pyworld2 is forked from the Rworld2 Software held by Arnaud Mignan.
+PyWorld2 is forked from the Rworld2 Software held by Arnaud Mignan.
 
 - *World Dynamics*, Jay W. Forrester (1973 second edition)
 - [RWorld2: reproducing doomsday models in R](https://github.com/amignan/hist_gc_sysdyn), Arnaud Mignan (2020). 
