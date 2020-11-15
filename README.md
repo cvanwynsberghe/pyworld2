@@ -8,7 +8,7 @@
 + [Quick install](#Quick-install)
 + [Hello World2](#Hello-World2)
 + [How to go further](#How-to-go-further)
-+ [How to cite the projet with Bibtex](#How-to-cite-me-with-Bibtex)
++ [How to cite the projet with Bibtex](#How-to-cite-the-project-with-Bibtex)
 + [References & acknowledgment](#References-&-acknowledgment)
 
 ---
