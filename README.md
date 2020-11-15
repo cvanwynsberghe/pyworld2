@@ -9,7 +9,7 @@
 + [Hello World2](#Hello-World2)
 + [How to go further](#How-to-go-further)
 + [How to cite the projet with Bibtex](#How-to-cite-the-project-with-Bibtex)
-+ [References & acknowledgment](#References-&-acknowledgment)
++ [References & acknowledgment](#References-and-acknowledgment)
 
 ---
 
@@ -73,7 +73,9 @@ pyworld2.utils.plot_world_state(w2)
 
 # How to cite the project with Bibtex
 
-The project is under the MIT Licence & open-source --- see the [licence terms](./LICENCE). To cite PyWorld2 via BibTex:
+The project is under the MIT Licence & open-source, see the [licence terms](./LICENCE) for more details.
+
+To cite PyWorld2 via BibTex:
 ```
 @software{vanwynsberghe2020pyworld2,
   author       = {Charles Vanwynsberghe},
@@ -88,7 +90,7 @@ The project is under the MIT Licence & open-source --- see the [licence terms](.
 }
 ```
 
-# References & acknowledgment
+# References and acknowledgment
 
 PyWorld2 is forked from the [Rworld2 Software](https://github.com/amignan/hist_gc_sysdyn) held by Arnaud Mignan.
 
