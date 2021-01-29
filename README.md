@@ -59,7 +59,7 @@ If you want to run your own simulations with different policies, you need to:
 * modify it at your convenience. Each policy is defined by its due date and its due variable (``NAME`` switches to ``NAME1`` at the year ``trigger.value``).
 * Finally, run the following lines of code:
 ``` Python
-import pyworld2
+from pyworld2 import World2
 
 w2 = World2()
 w2.set_state_variables()
