@@ -73,7 +73,7 @@ pyworld2.utils.plot_world_state(w2)
 
 # How to cite the project with Bibtex
 
-The project is under the MIT Licence & open-source, see the [licence terms](./LICENCE) for more details.
+The project is under the MIT Licence & open-source, see the [licence terms](./LICENSE) for more details.
 
 To cite PyWorld2 via BibTex:
 ```
