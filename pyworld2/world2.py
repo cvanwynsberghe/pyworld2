@@ -35,7 +35,7 @@ import os
 import numpy as np
 from scipy.interpolate import interp1d
 
-from .utils import Clipper, plot_world_state
+from .utils import Clipper, plot_world_variables, plt
 
 
 class World2:
@@ -520,17 +520,30 @@ def hello_world2():
     w2_nr.set_state_variables()
     w2_nr.set_initial_state()
     w2_nr.set_table_functions()
-    fname_nr = "./functions_switch_scenario_nr.json"
-    json_file = os.path.join(os.path.dirname(__file__), fname_nr)
+    fname_nr = "../examples/scenarios/functions_switch_scenario_2.json"
+    json_file = os.path.join(os.path.dirname(__file__),
+                             fname_nr.replace("/", os.sep))
     w2_nr.set_switch_functions(json_file)
     w2_nr.run()
 
     # plotting
     title_std = "World2 scenario - standard run"
-    plot_world_state(w2_std, title=title_std)
+    plot_world_variables(w2_std.time,
+                         [w2_std.p, w2_std.polr, w2_std.ci, w2_std.ql,
+                          w2_std.nr],
+                          ["P", "POLR", "CI", "QL", "NR"],
+                          [[0, 8e9], [0, 40], [0, 20e9], [0, 2], [0, 1000e9]],
+                          figsize=(7, 4), grid=True,
+                          title=title_std)
     title_nr = "World2 scenario - reduced usage of Natural Resources"
-    plot_world_state(w2_nr, title=title_nr)
+    plot_world_variables(w2_nr.time,
+                         [w2_nr.p, w2_nr.polr, w2_nr.ci, w2_nr.ql, w2_nr.nr],
+                          ["P", "POLR", "CI", "QL", "NR"],
+                          [[0, 8e9], [0, 40], [0, 20e9], [0, 2], [0, 1000e9]],
+                          figsize=(7, 4), grid=True,
+                          title=title_nr)
 
+    plt.show()
 
 if __name__ == "__main__":
     hello_world2()

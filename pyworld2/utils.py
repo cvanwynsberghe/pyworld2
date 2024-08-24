@@ -44,14 +44,20 @@ def make_patch_spines_invisible(ax):
         sp.set_visible(False)
 
 
-def plot_world_state(world2, title=None, dist_spines=0.09):
+def plot_world_variables(time, var_data, var_names, var_lims,
+                         title=None,
+                         figsize=None,
+                         dist_spines=0.09,
+                         grid=False):
     """
-    Plots world state from a World2 instance.
+    Plots world state from an instance of World2.
 
     """
-    fig, host = plt.subplots(figsize=(7, 4))
+    var_number = len(var_data)
+
+    fig, host = plt.subplots(figsize=figsize)
     axs = [host, ]
-    for i in range(4):
+    for i in range(var_number-1):
         axs.append(host.twinx())
 
     fig.subplots_adjust(left=dist_spines*2)
@@ -62,30 +68,21 @@ def plot_world_state(world2, title=None, dist_spines=0.09):
         ax.yaxis.set_ticks_position('left')
 
     ps = []
-    for ax, color, label, ydata in zip(axs,
+    for ax, label, ydata, color in zip(axs, var_names, var_data,
                                        ["black", "#e7298a", "#d95f02",
-                                        "#7570b3", "#1b9e77"],
-                                       ["P", "POLR  ", "CI ", "QL ", "NR "],
-                                       [world2.p, world2.polr, world2.ci,
-                                        world2.ql, world2.nr]):
+                                        "#7570b3", "#1b9e77"]):
+        ps.append(ax.plot(time, ydata, label=label, color=color, linewidth=3,
+                          alpha=0.7)[0])
+    axs[0].grid(grid)
+    axs[0].set_xlim(time[0], time[-1])
 
-        ps.append(ax.plot(world2.time, ydata, color=color, label=label)[0])
-    axs[0].grid(1)
+    for ax, lim in zip(axs, var_lims):
+        ax.set_ylim(lim[0], lim[1])
 
-    axs[0].set_xlim(world2.time[0], world2.time[-1])
-    axs[0].set_ylim(0, 8e9)
-    axs[1].set_ylim(0, 40)
-    axs[2].set_ylim(0, 20e9)
-    axs[3].set_ylim(0, 2)
-    axs[4].set_ylim(0, 1000e9)
-    for ax_, formatter_ in zip(axs,
-                               [EngFormatter(places=0, sep="\N{THIN SPACE}"),
-                                EngFormatter(places=0, sep="\N{THIN SPACE}"),
-                                EngFormatter(places=0, sep="\N{THIN SPACE}"),
-                                ScalarFormatter(),
-                                EngFormatter(places=0, sep="\N{THIN SPACE}")]):
+    for ax_ in axs:
+        formatter_ = EngFormatter(places=0, sep="\N{THIN SPACE}")
         ax_.tick_params(axis='y', rotation=90)
-        ax_.yaxis.set_major_locator(plt.MaxNLocator(4))
+        ax_.yaxis.set_major_locator(plt.MaxNLocator(5))
         ax_.yaxis.set_major_formatter(formatter_)
 
     tkw = dict(size=4, width=1.5)
@@ -101,3 +98,4 @@ def plot_world_state(world2, title=None, dist_spines=0.09):
         fig.suptitle(title, x=0.95, ha="right", fontsize=10)
 
     plt.tight_layout()
+    return axs
